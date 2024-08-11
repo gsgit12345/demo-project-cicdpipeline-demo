@@ -12,9 +12,10 @@ import static org.springframework.http.ResponseEntity.ok;
 @RestController
 public class DemoApplicationController {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public ResponseEntity<String> getMessage()
     {
+        System.out.println("hello I am invoke in the aws");
         return new ResponseEntity<String>("Hello World! from the rest controller", HttpStatus.OK);
     }
 }
