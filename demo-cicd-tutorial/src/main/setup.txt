@@ -1,25 +1,38 @@
 
 
 wget wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz
-
-
 sudo tar xvf apache-maven-3.9.8-bin.tar.gz -C /opt
-
 sudo ln -s /opt/apache-maven-3.9.8 /opt/maven
 sudo vi /etc/profile.d/maven.sh
-
 add the below
-
 export M2_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}
-
 sudo chmod +x /etc/profile.d/maven.sh
-
 source /etc/profile.d/maven.sh
-
 not able to connect outside of the world
 yum install httpd -y
+==================
+in security ,you add the port on which your application is running as in image file
+security-service.png  --we had added the port 8080
+
+http://ec2-3-143-239-194.us-east-2.compute.amazonaws.com:8080/hello
+
+sudo yum install java-17* -y
+
+https://www.linkedin.com/pulse/install-apache-maven-amazon-ec2-machine-lalitha-sree-bulusu-4lwxe/
+
+java -jar JAR_FILE_NAME.jar
+
+--running the application in background
+nohup java -jar JAR_FILE_NAME.jar > /dev/null 2>&1 &
+
 
 http://ec2-3-143-239-194.us-east-2.compute.amazonaws.com/
 
 https://devopscube.com/install-maven-guide/
+
+
+https://www.youtube.com/watch?v=kwhWFRNN3kg&list=PLwbWIFE49l8kuJWknOIMBx7NkOcwK4HxC&index=2      --tutorial
+https://www.digitalocean.com/community/tutorials/install-maven-linux-ubuntu
+
+https://phoenixnap.com/kb/install-maven-on-ubuntu
